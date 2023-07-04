@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Novo Anúncio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Novo Anúncio</h1>
+    
+        <button id="criarAnuncioBtn">Criar Anúncio</button>
+    </div>
+
+    <script>
+        document.getElementById("criarAnuncioBtn").addEventListener("click", function() {
+            // Ao clicar no botão, redirecionar para a página do formulário do anúncio
+            window.location.href = "formulario_anuncio.html";
+        });
+    </script>
+</body>
+</html>
