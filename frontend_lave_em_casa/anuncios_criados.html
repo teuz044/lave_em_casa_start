@@ -1,122 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anúncios Criados</title>
-    <style>
-        body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+    <link rel="stylesheet" href="style/estilosReutilizaveis/menu.css">
+    <link rel="stylesheet" href="style/estilosReutilizaveis/footer.css">
+    <link rel="stylesheet" href="style/telas/anunicos_criados_style.css">
+    <script src="js/hamburguer_menu.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-
-        .card {
-            background-color: #fff;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            color: #333;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .card .valor-lavagem {
-            font-weight: bold;
-        }
-
-        .back-button {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .back-button button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-    </style>
 </head>
+
 <body>
-    <h1>Anúncios Criados</h1>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <img class="logo-menu" src="img/logopngpequena.png" alt="">
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="#" onclick="voltar()" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"> Sobre</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="#">Entrar</a></button>
+            </div>
 
-    <div id="anunciosContainer"></div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+            </ul>
 
-    <div class="back-button">
-        <button onclick="voltar()">Voltar para a tela de criação</button>
+            <div class="login-button">
+                <button><a href="#">Entrar</a></button>
+            </div>
+    </header>
+
+    <h1 class="titulo-anuncios-criados">
+        <span class="titulo-letras">La</span>vanderias a sua disposição!
+    </h1>
+    <hr class="titulo-barrinha">
+
+    <div class="container">
+        <div id="anunciosContainer"></div>
     </div>
 
-    <script>
-        // Função para criar um card de anúncio
-        function criarCardAnuncio(anuncio) {
-            var card = document.createElement('div');
-            card.classList.add('card');
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-            var titulo = document.createElement('h3');
-            titulo.textContent = anuncio.titulo;
-            card.appendChild(titulo);
-
-            var descricao = document.createElement('p');
-            descricao.textContent = anuncio.descricao;
-            card.appendChild(descricao);
-
-            var valorLavagem = document.createElement('p');
-            valorLavagem.textContent = 'Valor da Lavagem: R$ ' + anuncio.valorLavagem.toFixed(2);
-            card.appendChild(valorLavagem);
-
-            return card;
-        }
-
-        // Função para exibir os anúncios na tela
-        function exibirAnuncios(anuncios) {
-            var container = document.getElementById('anunciosContainer');
-
-            anuncios.forEach(function(anuncio) {
-                var card = criarCardAnuncio(anuncio);
-                container.appendChild(card);
-            });
-        }
-
-        // Buscar os anúncios da API via Fetch
-        fetch('http://localhost:8080/anuncios')
-            .then(function(response) {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Erro na requisição');
-                }
-            })
-            .then(function(anuncios) {
-                exibirAnuncios(anuncios);
-            })
-            .catch(function(error) {
-                console.error('Erro na requisição:', error);
-            });
-
-        // Função para voltar para a tela de criação
-        function voltar() {
-            window.location.href = 'index.html'
-        }
-    </script>
+    <script src="js/anuncios_criados.js"></script>
+    <script src="js/hamburguer_menu.js"></script>
 </body>
+
+</html>
+
 </html>
