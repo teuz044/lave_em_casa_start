@@ -15,17 +15,7 @@ function criarCardAnuncio(anuncio) {
     var valorLavagem = document.createElement('p');
     valorLavagem.textContent = 'Valor da Lavagem: R$ ' + anuncio.valorLavagem.toFixed(2);
     card.appendChild(valorLavagem);
-
-
-// Botão de editar
-// var editarButton = document.createElement('button');
-// editarButton.textContent = 'Editar';
-// editarButton.classList.add('btn', 'btn-primary'); // Adicione as classes do Bootstrap
-// editarButton.addEventListener('click', function () {
-//     editarAnuncio(anuncio.proprietarioId, anuncio.id);
-// });
-// card.appendChild(editarButton);
-    
+        
     return card;
 }
 

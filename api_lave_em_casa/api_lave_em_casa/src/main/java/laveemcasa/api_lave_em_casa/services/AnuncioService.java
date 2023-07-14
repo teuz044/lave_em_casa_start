@@ -21,8 +21,7 @@ public class AnuncioService {
     }
 
     public Anuncios criarAnuncio(Integer proprietarioId, Anuncios anuncio) {
-        UsuariosProprietarios proprietario = proprietariosRepository.findById(proprietarioId)
-                .orElseThrow(() -> new RuntimeException("Usuário proprietário não encontrado"));
+        UsuariosProprietarios proprietario = proprietariosRepository.findById(proprietarioId).orElseThrow(() -> new RuntimeException("Usuário proprietário não encontrado"));
         anuncio.setProprietario(proprietario);
 
 
