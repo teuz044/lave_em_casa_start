@@ -1,51 +1,51 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+
+.container-form {
+    padding: 10rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
 }
 
-.container {
-    max-width: 400px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-form {
+#formularioAnuncio {
     display: flex;
     flex-direction: column;
 }
 
+.title-form {
+    font-size: 46;
+    text-align: center;
+    font-family: 'MontSerrat';
+}
+
+#titulo, #descricao, #valorLavagem, #proprietarioId {
+    height: 32px;
+
+}
+
 label {
-    margin-bottom: 8px;
+    font-family: 'MontSerrat';
+    font-weight: 500;
+    padding-top: 16px;
+}
+
+.button-form {
+    background-color: blueviolet;
+    color: white;
+    font-family: 'MontSerrat';
+    font-size: 20px;
+    max-width: 250px;
     font-weight: bold;
-}
-
-input,
-textarea {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 16px;
-}
-
-button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
+    height: 50px;
+    margin-top: 30px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 3px;
+    align-items: center;
+    text-align: center;
 }
 
-button:hover {
-    background-color: #0069d9;
+.button-form:hover {
+cursor: pointer;
+background-color: violet;
 }
+

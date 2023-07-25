@@ -6,12 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/telas/formulario_anuncio_style.css">
+    <link rel="stylesheet" href="style/estilosReutilizaveis/menu.css">
+    <link rel="stylesheet" href="style/estilosReutilizaveis/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Formulário de Novo Anúncio</h1>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <img class="logo-menu" src="img/logopngpequena.png" alt="">
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="home.html" onclick="voltar()" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"> Sobre</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="anuncios_criados.html">Anuncios Disponiveis</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="home.html" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+            </ul>
+
+            <div class="login-button">
+                <button><a href="#">Anuncios Disponiveis</a></button>
+            </div>
+    </header>
+
+    <div class="container-form">
+        <h1 class="title-form">Crie um Novo Anuncio</h1>
 
         <form id="formularioAnuncio">
             <label for="titulo">Título:</label>
@@ -26,9 +61,55 @@
             <label for="proprietarioId">ID do Proprietário:</label>
             <input type="number" id="proprietarioId" name="proprietarioId" required>
 
-            <button type="submit">Salvar</button>
+            <button type="submit" class="button-form">Salvar</button>
+
         </form>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <script>
         document.getElementById("formularioAnuncio").addEventListener("submit", function (event) {
@@ -73,6 +154,7 @@
                 });
         });
     </script>
+    <script src="js/hamburguer_menu.js"></script>
 
 </body>
 
