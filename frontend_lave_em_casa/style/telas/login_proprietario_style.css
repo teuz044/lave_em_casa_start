@@ -9,7 +9,7 @@
 }
 
 body {
-    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    background: linear-gradient(45deg, #8e2de2, #4287F5);
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vw;
@@ -90,6 +90,9 @@ form .input-field:first-child {
     color: rgba(0, 0, 0, 0.7);
     width: 100%;
 }
+a {
+    color: white;
+}
 
 .input-field input::placeholder {
     color: rgba(0, 0, 0, 0.5);
@@ -99,7 +102,7 @@ form .input-field:first-child {
     margin-top: 2rem;
     padding: 0.4rem;
     width: 100%;
-    background-color: darkorchid;
+    background-color: #4287F5;
     cursor: pointer;
     color: white;
     font-size: 0.9rem;
@@ -107,8 +110,6 @@ form .input-field:first-child {
     border-radius: 4px;
     transition: all 0.3s ease;
 }
-
-
 
 form input[type="submit"] {
     margin-top: 2rem;

@@ -9,14 +9,34 @@ function criarCardAnuncio(anuncio) {
     card.appendChild(titulo);
 
     var descricao = document.createElement('p');
-    descricao.textContent = anuncio.descricao, anuncio.proprietarioId;
+    descricao.textContent = anuncio.descricao;
     card.appendChild(descricao);
 
     var valorLavagem = document.createElement('p');
     valorLavagem.textContent = 'Valor da Lavagem: R$ ' + anuncio.valorLavagem.toFixed(2);
     card.appendChild(valorLavagem);
-        
+
+    // Adicionar evento de clique para abrir os detalhes do anúncio
+    card.addEventListener('click', function() {
+        abrirDetalhesAnuncio(anuncio);
+    });
+    
     return card;
+}
+
+function abrirDetalhesAnuncio(anuncio) {
+    // Formatar os dados do anúncio para passar para a tela detalhes_anuncios
+    var dadosAnuncio = {
+        titulo: anuncio.titulo,
+        descricao: anuncio.descricao,
+        valorLavagem: anuncio.valorLavagem
+    };
+
+    // Serializar os dados do anúncio para passar como query string na URL
+    var query = encodeURIComponent(JSON.stringify(dadosAnuncio));
+
+    // Abrir a nova tela (detalhes_anuncios) com os dados do anúncio
+    window.open('detalhes_anuncios.html?' + query, '_blank');
 }
 
 // Função para exibir os anúncios na tela
