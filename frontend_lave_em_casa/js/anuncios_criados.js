@@ -36,7 +36,7 @@ function abrirDetalhesAnuncio(anuncio) {
     var query = encodeURIComponent(JSON.stringify(dadosAnuncio));
 
     // Abrir a nova tela (detalhes_anuncios) com os dados do anúncio
-    window.open('detalhes_anuncios.html?' + query, '_blank');
+    window.open('tela_pagamento.html?' + query, '_blank');
 }
 
 // Função para exibir os anúncios na tela
